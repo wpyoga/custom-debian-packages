@@ -28,10 +28,7 @@ BINPKG_URL=https://github.com/$GITHUB_ORG/$GITHUB_PRJ/releases/download/v$VERSIO
 BINPKG_SHA256=f1a82c27624bf319c35f3bb4c136d5b82f26b014e8f5d16f64b3b0089f60220c
 
 AUX_FILES="AUTHORS CHANGELOG.md LICENSE README.md"
-AUX_FILES_SHA256="1d6a39a70c7160249d971ce629e5d3955404e9ca9b56a03f4ea5724a2db8d53f
- 7457d1db03569b93358e8a55fd825e1dd3ecc31c88e7022c115c08f2ae6f41c1
- bc73ab7f000da78230eb9e674b34fbd42f4a0ce1c748e4124ca3a6458fb4b2fa
- 4fce853dddcb4af26a67f2f5d5a0b2f3f12a0fd5b4a89792198348840e407109"
+AUX_FILES_SHA256="2e0c79a5024c1ac2ea8752980bbd4ee8c53297abc583d72f315ad0b5bd4c2e26 da4a6f48fbe5ac8cdf652f6dc6a0625dd583ca52a5ad8357398e1d6980fe8b2e aefd0cce553f24945ce1c692c3c4f9fda581f078ba82977845715cd18565b3bd 1f04b84a30932b4cc33dc9dad93dabeed757cc30b09be6dfb310922b82b24a79"
 
 
 which strip >/dev/null
@@ -51,7 +48,7 @@ for i in $(seq $(echo $AUX_FILES | wc -w)); do
   FILE_NAME=$(echo $AUX_FILES | cut -f $i -d ' ')
   FILE_SHA256=$(echo $AUX_FILES_SHA256 | cut -f $i -d ' ')
   echo "$FILE_SHA256 *$FILE_NAME" | sha256sum -c --quiet \
-    || wget -c https://github.com/$GITHUB_ORG/$GITHUB_PRJ/blob/v$VERSION/$FILE_NAME
+    || wget -c https://github.com/$GITHUB_ORG/$GITHUB_PRJ/raw/v$VERSION/$FILE_NAME
 done
 
 mkdir -p "${BASEDIR}/${PKG_DIR}/data"
