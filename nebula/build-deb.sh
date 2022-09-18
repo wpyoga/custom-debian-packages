@@ -30,9 +30,12 @@ BINPKG_SHA256=f1a82c27624bf319c35f3bb4c136d5b82f26b014e8f5d16f64b3b0089f60220c
 AUX_FILES="AUTHORS CHANGELOG.md LICENSE README.md"
 AUX_FILES_SHA256="2e0c79a5024c1ac2ea8752980bbd4ee8c53297abc583d72f315ad0b5bd4c2e26 da4a6f48fbe5ac8cdf652f6dc6a0625dd583ca52a5ad8357398e1d6980fe8b2e aefd0cce553f24945ce1c692c3c4f9fda581f078ba82977845715cd18565b3bd 1f04b84a30932b4cc33dc9dad93dabeed757cc30b09be6dfb310922b82b24a79"
 
+DEPENDENCIES="strip upx lintian"
 
-which strip >/dev/null
-which upx >/dev/null
+echo Finding dependencies: $DEPENDENCIES
+for i in $DEPENDENCIES; do
+  which $i >/dev/null
+done
 
 umask 022
 
