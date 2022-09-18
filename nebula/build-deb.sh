@@ -40,7 +40,6 @@ which upx >/dev/null
 umask 022
 
 cd "$BASEDIR"
-echo '7457d1db03569b93358e8a55fd825e1dd3ecc31c88e7022c115c08f2ae6f41c1 *CHANGELOG.md' | sha256sum -c --quiet
 
 echo "$BINPKG_SHA256 *$BINPKG_FILE" | sha256sum -c --quiet || wget -c "$BINPKG_URL"
 gzip -dc "$BINPKG_FILE" | tar xv
