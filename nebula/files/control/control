@@ -2,6 +2,6 @@ Package: nebula
 Version: @VERSION@
 Architecture: @ARCH@
 Maintainer: William Poetra Yoga <william.poetra@gmail.com>
-Description: Nebula Mesh VPN
+Description: Mesh VPN tool
  Nebula Mesh VPN (overlay networking tool) created by Slack.
 

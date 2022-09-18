@@ -61,8 +61,6 @@ install -Dt "${BASEDIR}/${PKG_DIR}/data/usr/bin" -m755 nebula nebula-cert
 install -Dt "${BASEDIR}/${PKG_DIR}/data/lib/systemd/system" -m644 files/nebula.service files/nebula@.service
 install -Dt "${BASEDIR}/${PKG_DIR}/data/usr/share/doc/${PKG_NAME}" -m644 $AUX_FILES
 
-install -dm755 "${BASEDIR}/${PKG_DIR}/data/etc/nebula"
-
 (cd "${BASEDIR}/${PKG_DIR}/data" && tar c --owner=0 --group=0 *) | xz -c9 >"${BASEDIR}/${PKG_DIR}/data.tar.xz"
 
 

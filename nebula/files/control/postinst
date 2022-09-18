@@ -2,3 +2,5 @@
 
 systemctl daemon-reload
 
+mkdir /etc/nebula
+
