@@ -45,7 +45,7 @@ echo "$BINPKG_SHA256 *$BINPKG_FILE" | sha256sum -c --quiet || wget -c "$BINPKG_U
 gzip -dc "$BINPKG_FILE" | tar xv
 
 strip nebula nebula-cert
-#upx -9 nebula nebula-cert
+upx -9 nebula nebula-cert
 
 for i in $(seq $(echo $AUX_FILES | wc -w)); do
   FILE_NAME=$(echo $AUX_FILES | cut -f $i -d ' ')
