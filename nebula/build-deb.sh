@@ -5,7 +5,7 @@ set -e
 BASEDIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
 
 VERSION=1.6.0
-DEBVERSION=1
+DEBVERSION=2
 
 ARCH=amd64
 DEBIAN_ARCH=amd64
